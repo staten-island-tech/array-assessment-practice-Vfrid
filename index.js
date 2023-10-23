@@ -121,3 +121,16 @@ else (console.log('yes'))
 //print a list of books that "includes" the genre historical
 const hist = books.filter((book) => book.genre.includes("historical"));
 hist.forEach((book)=> console.log(book.name))
+//print a list of books that "include" a genre inputted by the user
+const enter = prompt('Please enter a genre: ').toLowerCase();
+console.log("Books containing the genre '" + enter + "': ")
+const genres = books.filter((book) => book.genre.includes(enter));
+genres.forEach((book) => console.log((book.name)));
+//add a new book to the end of books
+const nameinput = prompt('Please enter a book name: ').toUpperCase();
+const authorfirstinput = prompt('Please enter your first name: ').toUpperCase();
+const authorlastinput = prompt('Please enter your last name: ').toUpperCase();
+const genreinput = prompt('Please enter a genre: ').toLowerCase();
+
+books.push({name: nameinput, authorFirst: authorfirstinput, authorLast: authorlastinput, publishDate: year, genre: genreinput})
+console.log(books);
